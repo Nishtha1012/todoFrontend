@@ -1,7 +1,7 @@
 import { Api } from "./api";
 
 //base URL
-const URL = 'https://todo-backend-fawn.vercel.app/';
+const URL = 'https://todo-backend-fawn.vercel.app';
 
 //Api path for user
 const userApi = {
