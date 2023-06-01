@@ -14,19 +14,27 @@ import { Alert } from "@mui/material"
 
 const useLogin = () => {
     const dispatch = useDispatch()
-    const { isLogged } = useSelector(state => state.user)
+    const { isLogged,error } = useSelector(state => state.user)
     const { userDetails } = useSelector(state => state.user)
 
     const navigate = useNavigate()
+ useEffect(() => {
+    if (isLogged === true) {
+      navigate(path.homePage)
+      console.log(isLogged)
+    }
+  }, [isLogged])
 
+  useEffect(() => {
+    if (error) {
+      navigate(path.loginPage)
+    }
+  }, [error])
     //checks in database and logs the authorized user in
     //shows appropriate alerts for logged in user or wrong credentials
     console.log("islogged", isLogged);
     const loginUser = async (data) => {
         const result = dispatch(loginUserAction(data))
-          if (isLogged === true) {
-            navigate(path.homePage)
-        }
     }
 
 
