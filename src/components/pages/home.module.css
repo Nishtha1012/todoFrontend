@@ -1,0 +1,19 @@
+.homeWrapper{
+    position: relative;
+    margin: 20px;
+}
+.logout{
+    position: absolute;
+    margin: 20px;
+    top: 0;
+    right: 0;
+}
+.addNew{
+    margin: 10px 34%;
+}
+.table{
+    margin: auto;
+}
+.thead{
+    font-weight: 900;
+}

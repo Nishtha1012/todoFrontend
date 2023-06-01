@@ -1,0 +1,12 @@
+.mauto{
+    margin: 0 28%;  
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+.error{
+    color: red;
+    margin: 0;
+}
