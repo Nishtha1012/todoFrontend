@@ -3,7 +3,7 @@ import axios from "axios";
 
 //axios instance
 const axiosInstance = axios.create({
-    baseURL: "https://todo-backend-fawn.vercel.app/",
+    baseURL: "https://todo-backend-fawn.vercel.app",
     headers: {
         'Accept': 'application/json'
     },
