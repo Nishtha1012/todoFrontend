@@ -24,6 +24,9 @@ const useLogin = () => {
     console.log("islogged", isLogged);
     const loginUser = async (data) => {
         const result = dispatch(loginUserAction(data))
+          if (isLogged === true) {
+            navigate(path.homePage)
+        }
     }
 
 
