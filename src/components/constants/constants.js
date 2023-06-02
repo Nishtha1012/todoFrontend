@@ -50,7 +50,7 @@ export const userLogin = (data) => {
 
 //get request to verify token
 export const verifyUser = () => {
-    return Api.get({
+    return Api.post({
         url: path.verify
     })
 }
