@@ -43,7 +43,7 @@ const useLogin = () => {
     //clears the cookie and logouts the user
     const userLogOut = () => {
         dispatch(logoutUserAction())
-        if(loggedout === true){
+       
         Swal.fire({
             position: 'top-end',
             icon: 'error',
@@ -52,8 +52,13 @@ const useLogin = () => {
             timer: 1500
         })
         navigate(path.loginPage)
-        }
+        
     }
+     useEffect(() => {
+    if (loggedout === true) {
+      navigate(path.loginPage)
+    }
+  }, [loggedout])
     return { loginUser, userLogOut, isLogged }
 }
 
