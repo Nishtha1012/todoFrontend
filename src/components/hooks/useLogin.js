@@ -16,7 +16,7 @@ import { Alert } from "@mui/material"
 
 const useLogin = () => {
     const dispatch = useDispatch()
-    const { isLogged,error } = useSelector(state => state.user)
+    const { isLogged,error,loggedout } = useSelector(state => state.user)
     const { userDetails } = useSelector(state => state.user)
 
     const navigate = useNavigate()
@@ -43,6 +43,7 @@ const useLogin = () => {
     //clears the cookie and logouts the user
     const userLogOut = () => {
         dispatch(logoutUserAction())
+        if(loggedout === true){
         Swal.fire({
             position: 'top-end',
             icon: 'error',
@@ -51,6 +52,7 @@ const useLogin = () => {
             timer: 1500
         })
         navigate(path.loginPage)
+        }
     }
     return { loginUser, userLogOut, isLogged }
 }
