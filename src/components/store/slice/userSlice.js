@@ -9,6 +9,7 @@ const initialState = {
     users: {},
     isLogged: -1,
     isSigned: -1,
+    loggedout:-1
 }
 
 const userSlice = createSlice({
@@ -77,7 +78,8 @@ const userSlice = createSlice({
             })
             .addCase(logoutUserAction.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.isLogged = -1
+                state.isLogged = -1;
+                state.loggedout = true
             })
             .addCase(logoutUserAction.rejected, (state, action) => {
                 state.isLoading = false;
