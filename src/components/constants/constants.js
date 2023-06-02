@@ -50,14 +50,14 @@ export const userLogin = (data) => {
 
 //get request to verify token
 export const verifyUser = () => {
-    return Api.post({
+    return Api.get({
         url: path.verify
     })
 }
 
 //get request to remove the token
 export const userLogout = () => {
-    return Api.get({
+    return Api.post({
         url: path.logout
     })
 }
